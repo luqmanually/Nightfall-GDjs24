@@ -27,7 +27,7 @@ k.scene("game", () => {
 	new infoBar();
 
 	const bean = k.add([
-		k.pos(120, 100),
+		k.pos(120, 200),
 		k.sprite("bean"),
 	]);
 
