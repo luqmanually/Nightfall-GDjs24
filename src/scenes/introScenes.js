@@ -41,6 +41,7 @@ export function introScenes() {
     
         onKeyPress("space", () => {
             k.go("game");
+            return "started";
         });
     })
 }
