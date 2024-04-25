@@ -1,12 +1,29 @@
-import kaboom from "kaboom"
+import kaboom from 'kaboom';
 
-const k = kaboom()
+k = kaboom({
+    width: 1600,
+    height: 900,
+    background: [0, 0, 0]
+});
 
-k.loadSprite("bean", "sprites/bean.png")
+import { introScenes } from './scenes/introScenes';
 
-k.add([
-	k.pos(120, 80),
-	k.sprite("bean"),
-])
+k.loadSprite("bean", "sprites/bean.png");
 
-k.onClick(() => k.addKaboom(k.mousePos()))
+// Main scene
+k.scene("game", () => {
+	const bean = k.add([
+		k.pos(120, 80),
+		k.sprite("bean"),
+	]);
+	
+	const ground = k.add([
+		k.rect(width(), 600),
+		k.pos(0, 300),
+		k.color(100, 100, 100)
+	]);
+});
+
+introScenes();
+
+k.go("backstory")
